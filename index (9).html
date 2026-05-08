@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Website</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 10%;
+      background:#111827;
+      position:sticky;
+      top:0;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:cyan;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:cyan;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:50px;
+      padding:50px 10%;
+      flex-wrap:wrap;
+    }
+
+    .text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .text h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .text span{
+      color:cyan;
+    }
+
+    .text p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    button{
+      padding:15px 35px;
+      border:none;
+      border-radius:10px;
+      background:cyan;
+      color:black;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.1);
+    }
+
+    .cube-area{
+      flex:1;
+      min-width:1000px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .cube{
+      position:relative;
+      width:100px;
+      height:100px;
+      transform-style:preserve-3d;
+      animation:rotate 8s infinite linear;
+    }
+
+    .cube div{
+      position:absolute;
+      width:400px;
+      height:400px;
+      background: skyblue (0,255,255,0.2);
+      border:2px solid lightcyan;
+      box-shadow:0 0 20px deepskyblue;
+    }
+
+    .front{ transform:translateZ(100px); }
+    .back{ transform:rotateY(180deg) translateZ(100px); }
+    .left{ transform:rotateY(-90deg) translateZ(100px); }
+    .right{ transform:rotateY(90deg) translateZ(100px); }
+    .top{ transform:rotateX(90deg) translateZ(100px); }
+    .bottom{ transform:rotateX(-90deg) translateZ(100px); }
+
+    @keyframes rotate{
+      0%{
+        transform:rotateX(0deg) rotateY(0deg);
+      }
+      100%{
+        transform:rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    .section{
+      padding:100px 10%;
+      text-align:center;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+      border:1px solid #334155;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 20px cyan;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      color:#94a3b8;
+    }
+
+.navbar{
+  display:flex;
+  gap:15px;
+  background:rgba(255,255,255,0.05);
+  padding:10px;
+  border-radius:50px;
+}
+
+.navbar a{
+  text-decoration:none;
+  color:white;
+  padding:12px 25px;
+  border-radius:30px;
+  transition:0.4s;
+  font-weight:bold;
+}
+
+.navbar a:hover{
+  background:cyan;
+  color:black;
+  box-shadow:0 0 15px cyan;
+  transform:translateY(-3px);
+}
+
+.navbar .active{
+  background:cyan;
+  color:black;
+  box-shadow:0 0 15px cyan;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">Projects</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+  </header>
+
+  <section class="hero">
+
+    <div class="text">
+      <h1>Contact for<span>3D Websites</span></h1>
+
+      <p>
+        Hii I'Mani
+        Modern animated 3D website template creater byusing HTML and CSS.
+      </p>
+
+      <button>Explore</button>
+    </div>
+
+    <div class="cube-area">
+
+      <div class="cube">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <h2>My Projects</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>3D Car</h3>
+        <p>Awesome 3D model showcase website.</p>
+      </div>
+
+      <div class="card">
+        <h3>Gaming UI</h3>
+        <p>Futuristic gaming website design.</p>
+      </div>
+
+      <div class="card">
+        <h3>Portfolio</h3>
+        <p>Modern animated portfolio website.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 My 3D Website
+  </footer>
+
+</body>
+</html>
+
+
+
+
+</html>
